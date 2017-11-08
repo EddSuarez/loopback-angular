@@ -1,0 +1,36 @@
+version: '2.0'
+services:
+  backend:
+    image: bitnami/node
+    command: "sh -c './wait-for-it.sh postgresql:5432 -- npm install && npm run start:dev:api'"
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/app
+    links:
+      - "postgresql:postgresql"
+    depends_on:
+      - postgresql
+    network_mode: bridge
+    env_file: .env
+  frontend:
+    image: bitnami/node
+    command: "sh -c './wait-for-it.sh backend:8080 -- npm run start:dev'"
+    ports:
+      - 8081:8081
+    links:
+      - "backend:backend"
+    volumes_from:
+      - backend
+    depends_on:
+      - backend
+    network_mode: bridge
+    env_file: .env
+  postgresql:
+    image: centos/postgresql-94-centos7
+    logging:
+      driver: none
+    ports:
+      - 5432:5432
+    network_mode: bridge
+    env_file: .env

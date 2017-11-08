@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "psql",
+    "public": false
+  },
+  "User": {
+    "dataSource": "psql",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "psql",
+    "public": false
+  },
+  "email": {
+    "dataSource": "emailDs"
+  },
+  "RoleMapping": {
+    "dataSource": "psql",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "psql",
+    "public": false
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "test": {
+    "dataSource": "psql",
+    "public": true
+  }
+}

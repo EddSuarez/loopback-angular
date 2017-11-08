@@ -1,0 +1,7 @@
+{
+  "loopback-component-explorer": null,
+  "loopback-graphql": {
+    "path": "/graphql",
+    "graphiqlPath": "/graphiql"
+  }
+}

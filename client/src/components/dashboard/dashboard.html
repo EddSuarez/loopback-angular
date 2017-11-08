@@ -1,0 +1,16 @@
+<div class="content-wrapper">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Dashboard</h4>
+    </div>
+    <div class="panel-body">
+      <div class="text-center h4 cb-empty-space" ng-show="$ctrl.pageLoading">
+        {{ 'words.LOADING' | translate }}...
+      </div>
+      <div ng-if="!$ctrl.pageLoading">
+        Dashboard content
+      </div>
+    </div>
+  </div>
+</div>
+
