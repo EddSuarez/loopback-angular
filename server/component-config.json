@@ -6,8 +6,10 @@
       "description": ""
     }
   },
-  "loopback-graphql": {
+  "loopback-graphql-server": {
     "path": "/graphql",
-    "graphiqlPath": "/graphiql"
+    "graphiqlPath": "/graphiql",
+    "modelMutationGroups": false,
+    "modelQueryGroups": true
   }
 }

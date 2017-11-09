@@ -13,11 +13,18 @@
   },
   "AccessToken": {
     "dataSource": "psql",
-    "public": false
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "user",
+        "foreignKey": "userId"
+      }
+    }
   },
   "User": {
     "dataSource": "psql",
-    "public": false
+    "public": true
   },
   "ACL": {
     "dataSource": "psql",
